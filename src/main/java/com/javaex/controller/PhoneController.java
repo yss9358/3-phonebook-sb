@@ -19,7 +19,6 @@ public class PhoneController {
 	@GetMapping("/phone3/list")
 	public JsonResult list() {
 		List<PersonVo> list = phoneService.exeList();
-		System.out.println(list);
 		if(list != null) {
 			return JsonResult.success(list);
 		} else {
