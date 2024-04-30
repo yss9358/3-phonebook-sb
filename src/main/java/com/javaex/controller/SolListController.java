@@ -53,4 +53,11 @@ public class SolListController {
 		List<PersonVo> personList = listService.exeListFind();
 		return JsonResult.success(personList);
 	}
+	
+	//즐겨찾기 추가삭제
+	@PostMapping("star/{no}")
+	public JsonResult star(@PathVariable(value="no") int personNo) {
+		System.out.println("SolListController.star()");
+		return JsonResult.success("");
+	}
 }
