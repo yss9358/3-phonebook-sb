@@ -26,4 +26,11 @@ public class PhoneController {
 			return JsonResult.fail("리스트를 불러오는데 실패했습니다.");
 		}
 	}
+	
+	@GetMapping("/phone3/teamlist")
+	public void teamList() {
+		System.out.println("con");
+		
+	}
+	
 }
