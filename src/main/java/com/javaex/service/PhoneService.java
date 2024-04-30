@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.javaex.dao.PhoneDao;
 import com.javaex.vo.PersonVo;
+import com.javaex.vo.TeamVo;
 
 @Service
 public class PhoneService {
@@ -15,7 +16,11 @@ public class PhoneService {
 	private PhoneDao phoneDao;
 	
 	public List<PersonVo> exeList() {
-		return phoneDao.list();
-		
+		return phoneDao.list();	
 	}
+	
+	public List<TeamVo> exeTeamList() {
+		return phoneDao.teamList();
+	}
+
 }

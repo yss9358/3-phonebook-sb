@@ -16,5 +16,13 @@
 		]]>
 	</select>
 	
+	<select id="teamList" resultType="com.javaex.vo.TeamVo">
+		<![CDATA[
+			select	team_no teamNo,
+					team_name teamName
+			from team
+		]]>
+	</select>
+	
 	
 </mapper>

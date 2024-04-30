@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.javaex.vo.PersonVo;
+import com.javaex.vo.TeamVo;
 
 @Repository
 public class PhoneDao {
@@ -17,4 +18,9 @@ public class PhoneDao {
 	public List<PersonVo> list() {
 		return sqlSession.selectList("phone.list");
 	}
+	
+	public List<TeamVo> teamList() {
+		return sqlSession.selectList("phone.teamList");
+	}
+	
 }
