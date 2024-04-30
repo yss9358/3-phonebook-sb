@@ -1,12 +1,12 @@
 name: Deploy phone3App #워크플로우 이름
 
 on: #이벤트정의
-  workflow_dispatch:
-    inputs:
+#  workflow_dispatch:
+#    inputs:
   
-#  push:
-#    branches:
-#      - master # 또는 프로젝트의 기본 브랜치명
+  push:
+    branches:
+      - master # 또는 프로젝트의 기본 브랜치명
 
 jobs:
   build-and-deploy:
