@@ -13,6 +13,7 @@ public class SolListController {
 	@GetMapping("main")
 	public JsonResult mainList() {
 		System.out.println("SolListController.mainList()");
+		
 		return JsonResult.success("데이터보내기");
 	}
 }

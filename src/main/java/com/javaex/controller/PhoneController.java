@@ -16,15 +16,15 @@ public class PhoneController {
 	@Autowired
 	private PhoneService phoneService;
 	
-	@GetMapping("/phone3/list")
-	public JsonResult list() {
-		List<PersonVo> list = phoneService.exeList();
-		System.out.println(list);
-		if(list != null) {
-			return JsonResult.success(list);
-		} else {
-			return JsonResult.fail("리스트를 불러오는데 실패했습니다.");
-		}
-	}
+//	@GetMapping("/phone3/list")
+//	public JsonResult list() {
+//		List<PersonVo> list = phoneService.exeList();
+//		System.out.println(list);
+//		if(list != null) {
+//			return JsonResult.success(list);
+//		} else {
+//			return JsonResult.fail("리스트를 불러오는데 실패했습니다.");
+//		}
+//	}
 	
 }
