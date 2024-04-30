@@ -48,4 +48,4 @@ jobs:
             sudo docker pull y2s9358/phone3:latest
             sudo docker stop phone3 || true
             sudo docker rm phone3 || true
-            sudo docker run -d --name phone3 -p 9010:9010 y2s9358/phone3:latest
+            sudo docker run -d --name phone3 -p 9000:9000 y2s9358/phone3:latest
