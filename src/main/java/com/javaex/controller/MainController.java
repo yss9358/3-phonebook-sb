@@ -1,14 +1,17 @@
 package com.javaex.controller;
 
+import org.springframework.boot.web.servlet.error.ErrorController;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-public class MainController {
+@Controller
+public class MainController implements ErrorController{
 
-	@GetMapping
-	public void list() {
-		System.out.println("list");
+	private final String ERROR_PATH = "/error";
+	
+	@GetMapping(ERROR_PATH)
+	public String redirectRoot() {
+		return "index.html";
 	}
 
 }
