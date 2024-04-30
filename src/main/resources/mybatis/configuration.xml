@@ -5,7 +5,7 @@
 	<typeAliases>
 	</typeAliases>
 	<mappers>
-		<mapper resource="mybatis/mappers/phone.xml" /> 
-		<mapper resource="mybatis/mappers/main.xml" /> 
+		<mapper resource="mybatis/mappers/phone.xml" />
+		<mapper resource="mybatis/mappers/main.xml" />
 	</mappers>
 </configuration>
