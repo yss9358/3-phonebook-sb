@@ -27,10 +27,4 @@ public class PhoneController {
 		}
 	}
 	
-	@GetMapping("/phone3/teamlist")
-	public void teamList() {
-		System.out.println("con");
-		
-	}
-	
 }
