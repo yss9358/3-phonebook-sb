@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,10 +38,11 @@ public class SolListController {
 	}
 
 	// 그룹 리스트
-	@GetMapping("group")
-	public JsonResult groupList() {
+	@GetMapping("group/{no}")
+	public JsonResult groupList(@PathVariable(value="no") int groupNo) {
 		System.out.println("SolListController.starList()");
-		List<PersonVo> personList = listService.exeListGroup();
+		List<PersonVo> personList = listService.exeListGroup(groupNo);
+		System.out.println(personList);
 		return JsonResult.success(personList);
 	}
 

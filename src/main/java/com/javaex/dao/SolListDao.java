@@ -29,9 +29,9 @@ public class SolListDao {
 	}
 
 	// 그룹 리스트
-	public List<PersonVo> selectGroupList() {
+	public List<PersonVo> selectGroupList(int groupNo) {
 		System.out.println("SolListDao.selectGroupList()");
-		List<PersonVo> personList = sqlSession.selectList("sol.selectGroup");
+		List<PersonVo> personList = sqlSession.selectList("sol.selectGroup", groupNo);
 		return personList;
 	}
 

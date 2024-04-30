@@ -6,7 +6,7 @@
 	<!-- 전체리스트 -->
 	<select id="selectAll" resultType="com.javaex.vo.PersonVo">
 		<![CDATA[
-		select person_no personNo, name, hp, team_no teamNo, star
+		select person_no personNo, name
 		from person
 		]]>
 	</select>
@@ -14,8 +14,8 @@
 	<!-- 즐겨찾기 -->
 	<select id="selectStar" resultType="com.javaex.vo.PersonVo">
 		<![CDATA[
-		select person_no personNo, name, hp, team_no teamNo, star
-		from person where star = 1
+		select person_no personNo, name, star
+		from person where star = true
 		]]>
 	</select>
 	
@@ -23,7 +23,7 @@
 	<select id="selectGroup" resultType="com.javaex.vo.PersonVo" parameterType="int">
 		<![CDATA[
 		select person_no personNo, name, hp, team_no teamNo, star
-		from person where star = #{teamNo}
+		from person where team_no = #{groupNo}
 		]]>
 	</select>
 	

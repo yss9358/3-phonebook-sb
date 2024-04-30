@@ -29,9 +29,9 @@ public class SolListService {
 	}
 
 	// 그룹 리스트
-	public List<PersonVo> exeListGroup() {
+	public List<PersonVo> exeListGroup(int groupNo) {
 		System.out.println("SolListService.exeListStar()");
-		List<PersonVo> personList = listDao.selectGroupList();
+		List<PersonVo> personList = listDao.selectGroupList(groupNo);
 		return personList;
 	}
 
