@@ -51,33 +51,23 @@ public class PhoneController {
 	public JsonResult addTeam(@RequestBody Map<String, String> map) {
 		String teamName = map.get("teamName");
 		int count = phoneService.exeInsertTeam(teamName);
-		if(count == 1) {
-			return JsonResult.success(count);
-		} else {
-			return JsonResult.fail("중복입니다.");
-		}
+		return JsonResult.success(count);
+		
 	}
 	
 	// 그룹 삭제
 	@DeleteMapping("/phone3/teams/{no}")
 	public JsonResult delete(@PathVariable int no) {
 		int count = phoneService.exeDelete(no);
-		if(count == 1) {
-			return JsonResult.success(count);
-		} else {
-			return JsonResult.fail("데이터 오류");
-		}
+		return JsonResult.success(count);
+		
 	}
 	
 	// 그룹 이름 수정
 	@PutMapping("/phone3/teams")
 	public JsonResult update(@RequestBody TeamVo vo) {
 		int count = phoneService.exeUpdate(vo);
-		if(count == 1) {
-			return JsonResult.success(count);
-		} else {
-			return JsonResult.fail("중복입니다.");
-		}
+		return JsonResult.success(count);
 	}
 	
 }
