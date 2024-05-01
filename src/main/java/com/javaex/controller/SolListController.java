@@ -51,8 +51,9 @@ public class SolListController {
 	@PostMapping("find")
 	public JsonResult findList(@RequestBody String keyword) {
 		System.out.println("SolListController.mainList("+keyword+")");
+		keyword = "%"+keyword+"%";
 		List<PersonVo> personList = listService.exeListFind(keyword);
-		System.out.println(personList);
+//		System.out.println(personList);
 		return JsonResult.success(personList);
 	}
 

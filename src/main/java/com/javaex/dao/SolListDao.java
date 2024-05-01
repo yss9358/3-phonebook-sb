@@ -38,6 +38,7 @@ public class SolListDao {
 	// 검색
 	public List<PersonVo> selectFindList(String keyword) {
 		System.out.println("SolListDao.selectFindList()");
+//		System.out.println(keyword);
 		List<PersonVo> personList = sqlSession.selectList("sol.selectFind", keyword);
 		return personList;
 	}
