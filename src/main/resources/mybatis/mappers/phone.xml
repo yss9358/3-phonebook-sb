@@ -18,9 +18,17 @@
 	
 	<select id="teamList" resultType="com.javaex.vo.TeamVo">
 		<![CDATA[
-			select	team_no teamNo,
-					team_name teamName
-			from team
+			select	t.team_no teamNo,
+					t.team_name teamName,
+			        coalesce(p.count,0) count
+			from team t
+			left outer join (select	t.team_no,
+								count(t.team_no) count 
+						from team t 
+						inner join person p 
+								on t.team_no = p.team_no 
+						group by t.team_no) p
+					on t.team_no = p.team_no
 		]]>
 	</select>
 	

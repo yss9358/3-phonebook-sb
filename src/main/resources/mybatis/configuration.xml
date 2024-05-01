@@ -8,7 +8,7 @@
 	<mappers>
 		<mapper resource="mybatis/mappers/sollist.xml" />
 		<mapper resource="mybatis/mappers/phone.xml" />
-		
+		<mapper resource="mybatis/mappers/jwedit.xml" />
 		<mapper resource="mybatis/mappers/main.xml" />
 		<mapper resource="mybatis/mappers/ys.xml" />
 	</mappers>
