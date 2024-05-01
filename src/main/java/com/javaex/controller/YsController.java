@@ -47,6 +47,7 @@ public class YsController {
 		return JsonResult.success(personList);
 	}
 	
+	
 	//그룹 리스트 뽑기
 	@GetMapping("/phone3/teamlist")
 	public JsonResult team() {
