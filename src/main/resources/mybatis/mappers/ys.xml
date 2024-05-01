@@ -11,6 +11,11 @@
 		<result column="star" property="star"></result>
 	</resultMap>
 	
+	<resultMap type="com.javaex.vo.TeamVo" id="resultMapTeamVo">
+		<result column="team_no" property="teamNo"></result>
+		<result column="team_name" property="teamName"></result>
+	</resultMap>
+	
 	<!-- 쿼리문작성 -->
 	<!-- insert 사용 map -->
 	<insert id="insert" parameterType="com.javaex.vo.PersonVo">
@@ -25,7 +30,14 @@
 		<![CDATA[	
 			select person_no, name, hp
 			from person
-			where hp like #{hp};
+			where hp like #{hp}
+		]]>
+	</select>
+	
+	<!-- team 보기 가져오기 -->
+	<select id="selectTeam" resultMap="resultMapTeamVo">
+		<![CDATA[	
+			select team_no, team_name from team
 		]]>
 	</select>
 	

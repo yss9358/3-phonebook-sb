@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.javaex.vo.PersonVo;
+import com.javaex.vo.TeamVo;
 
 @Repository
 public class YsDao {
@@ -28,6 +29,14 @@ public class YsDao {
 		List<PersonVo> personList = sqlSession.selectList("ys.select", hp);
 		
 		return personList;
+	}
+
+	public List<TeamVo> teamSelect() {
+		System.out.println("YsDao.teamSelect()");
+		
+		List<TeamVo> teamList = sqlSession.selectList("ys.selectTeam");
+		
+		return teamList;
 	}
 
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.javaex.dao.YsDao;
 import com.javaex.vo.PersonVo;
+import com.javaex.vo.TeamVo;
 
 @Service
 public class YsService {
@@ -28,6 +29,14 @@ public class YsService {
 		List<PersonVo> personList = ysDao.personSelect(hp);
 		
 		return personList;
+	}
+
+	public List<TeamVo> exeTeam() {
+		System.out.println("YsService.exeTeam()");
+		
+		List<TeamVo> teamList = ysDao.teamSelect();
+		
+		return teamList;
 	}
 
 }

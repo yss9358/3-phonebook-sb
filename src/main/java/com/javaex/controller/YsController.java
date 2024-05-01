@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.javaex.service.YsService;
 import com.javaex.util.JsonResult;
 import com.javaex.vo.PersonVo;
+import com.javaex.vo.TeamVo;
 
 @RestController
 public class YsController {
@@ -42,4 +43,15 @@ public class YsController {
 
 		return JsonResult.success(personList);
 	}
+	
+	@GetMapping("/phone3/teamlist")
+	public JsonResult team() {
+		System.out.println("YsController.group()");
+
+		List<TeamVo> teamList = ysService.exeTeam();
+
+		return JsonResult.success(teamList);
+	}
+	
+	
 }
