@@ -2,6 +2,8 @@ package com.javaex.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,8 +16,8 @@ public class DeleteController {
 	private DeleteService deleteService;
 	
 	//삭제
-	@DeleteMapping(value="api/phones/{personNo}")
-	public int delete(@RequestParam(value="personNo")int no) {
+	@GetMapping(value="phone3/delete/{personNo}")
+	public int delete(@PathVariable(value="personNo")int no) {
 		System.out.println("DeleteController.delete");
 		
 		int count = deleteService.exeDelete(no);
