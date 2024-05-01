@@ -39,4 +39,12 @@ public class YsDao {
 		return teamList;
 	}
 
+	public int starUpdate(PersonVo personVo) {
+		System.out.println("YsDao.starUpdate()");
+		
+		int count = sqlSession.update("ys.updateStar", personVo);
+		
+		return count;
+	}
+
 }

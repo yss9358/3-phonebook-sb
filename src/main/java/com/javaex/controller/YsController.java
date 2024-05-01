@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,17 +21,19 @@ public class YsController {
 	@Autowired
 	private YsService ysService;
 	
+	//등록
 	@PostMapping("/phone3/insert")
 	public JsonResult insert(@RequestBody PersonVo personVo) {
 		System.out.println("YsController.insert()");
 
-		System.out.println(personVo.toString());
+		//System.out.println(personVo.toString());
 
 		int count = ysService.exeInsert(personVo);
 
 		return JsonResult.success(count);
 	}
 	
+	//다이얼 검색
 	@GetMapping("/phone3/search/{phoneNumber}")
 	public JsonResult search(@PathVariable(value="phoneNumber") String hp) {
 		System.out.println("YsController.search()");
@@ -44,6 +47,7 @@ public class YsController {
 		return JsonResult.success(personList);
 	}
 	
+	//그룹 리스트 뽑기
 	@GetMapping("/phone3/teamlist")
 	public JsonResult team() {
 		System.out.println("YsController.group()");
@@ -54,5 +58,14 @@ public class YsController {
 		return JsonResult.success(teamList);
 	}
 	
-	
+	//즐겨찾기 수정(상세 페이지)
+	@PutMapping("/phone3/star")
+	public JsonResult star(@RequestBody PersonVo personVo) {
+		System.out.println("YsController.star()");
+		
+		int count = ysService.exeStar(personVo);
+		
+		return JsonResult.success(count);
+		
+	}
 }

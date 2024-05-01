@@ -39,4 +39,12 @@ public class YsService {
 		return teamList;
 	}
 
+	public int exeStar(PersonVo personVo) {
+		System.out.println("YsService.exeStar()");
+		
+		int count = ysDao.starUpdate(personVo);
+		
+		return count;
+	}
+
 }

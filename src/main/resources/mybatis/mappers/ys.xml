@@ -41,4 +41,13 @@
 		]]>
 	</select>
 	
+	<!-- 즐겨찾기 수정 -->
+	<update id="updateStar" parameterType="com.javaex.vo.PersonVo">
+		<![CDATA[	
+			update person
+			set star=#{star}
+			where person_no=#{personNo}
+		]]>
+	</update>
+	
 </mapper>
