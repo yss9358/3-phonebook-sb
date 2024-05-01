@@ -36,10 +36,17 @@ public class SolListDao {
 	}
 
 	// 검색
-	public List<PersonVo> selectFindList() {
+	public List<PersonVo> selectFindList(String keyword) {
 		System.out.println("SolListDao.selectFindList()");
-		List<PersonVo> personList = sqlSession.selectList("sol.selectFind");
+		List<PersonVo> personList = sqlSession.selectList("sol.selectFind", keyword);
 		return personList;
+	}
+	
+	//즐겨찾기
+	public int updateStar(int personNo) {
+		System.out.println("SolListDao.updateStar");
+		int count = sqlSession.update("sol.starUpdate", personNo);
+		return count;
 	}
 
 }

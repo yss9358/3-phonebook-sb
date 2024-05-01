@@ -6,7 +6,7 @@
 	<!-- 전체리스트 -->
 	<select id="selectAll" resultType="com.javaex.vo.PersonVo">
 		<![CDATA[
-		select person_no personNo, name
+		select person_no personNo, name, hp
 		from person
 		]]>
 	</select>
@@ -35,6 +35,13 @@
 		where name like concat('%',#{keyword},'%')
 		]]>
 	</select>
+	
+	<!-- 즐겨찾기 업데이트 -->
+	<update id="starUpdate" parameterType="int">
+		<![CDATA[
+		update person set star = !star where person_no = #{personNo}
+		]]>
+	</update>
 
 
 </mapper>

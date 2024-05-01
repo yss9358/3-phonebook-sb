@@ -36,10 +36,17 @@ public class SolListService {
 	}
 
 	// 검색
-	public List<PersonVo> exeListFind() {
+	public List<PersonVo> exeListFind(String keyword) {
 		System.out.println("SolListService.exeListFind()");
-		List<PersonVo> personList = listDao.selectFindList();
+		List<PersonVo> personList = listDao.selectFindList(keyword);
 		return personList;
+	}
+	
+	//즐겨찾기
+	public int exeStarUpdate(int personNo) {
+		System.out.println("SolListService.exeStarUpdate()");
+		int count = listDao.updateStar(personNo);
+		return count;
 	}
 
 }
