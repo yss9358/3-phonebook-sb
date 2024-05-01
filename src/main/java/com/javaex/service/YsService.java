@@ -24,7 +24,7 @@ public class YsService {
 
 	public List<PersonVo> exeSearch(String hp) {
 		System.out.println("YsService.exeSearch()");
-		
+
 		List<PersonVo> personList = ysDao.personSelect(hp);
 		
 		return personList;

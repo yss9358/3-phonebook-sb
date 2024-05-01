@@ -33,9 +33,12 @@ public class YsController {
 	@GetMapping("/phone3/search/{phoneNumber}")
 	public JsonResult search(@PathVariable(value="phoneNumber") String hp) {
 		System.out.println("YsController.search()");
-		System.out.println(hp);
 
+		hp = "%" + hp + "%";
+		
+		System.out.println(hp);
 		List<PersonVo> personList = ysService.exeSearch(hp);
+		System.out.println(personList);
 
 		return JsonResult.success(personList);
 	}
