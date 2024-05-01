@@ -60,10 +60,11 @@ public class YsController {
 	
 	//즐겨찾기 수정(상세 페이지)
 	@PutMapping("/phone3/star")
-	public JsonResult star(@RequestBody PersonVo personVo) {
+	public JsonResult star(@RequestBody int personNo) {
 		System.out.println("YsController.star()");
 		
-		int count = ysService.exeStar(personVo);
+		System.out.println(personNo);
+		int count = ysService.exeStar(personNo);
 		
 		return JsonResult.success(count);
 		
