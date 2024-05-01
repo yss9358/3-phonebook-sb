@@ -70,4 +70,13 @@
 		]]>
 	</delete>
 	
+	<!-- 그룹 수정 -->
+	<update id="updateTeam" parameterType="com.javaex.vo.TeamVo">
+		<![CDATA[
+			update team
+			set team_name = #{teamName}
+			where team_no = #{teamNo}
+		]]>
+	</update>
+	
 </mapper>

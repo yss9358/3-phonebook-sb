@@ -45,5 +45,15 @@ public class PhoneService {
 			return -1;
 		}
 	}
-
+	
+	// 그룹 이름 수정 + 체크
+	public int exeUpdate(TeamVo vo) {
+		TeamVo checkVo = phoneDao.teamCheck(vo.getTeamName());
+		if(checkVo == null) {
+			int count = phoneDao.updateTeam(vo);
+			return count;
+		} else {
+			return -1;
+		}
+	}
 }

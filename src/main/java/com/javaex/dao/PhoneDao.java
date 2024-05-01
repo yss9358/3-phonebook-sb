@@ -46,4 +46,9 @@ public class PhoneDao {
 		int count = sqlSession.delete("phone.deleteTeam",no);
 		return count;
 	}
+	
+	// 그룹 수정
+	public int updateTeam(TeamVo vo) {
+		return sqlSession.update("phone.updateTeam",vo);
+	}
 }

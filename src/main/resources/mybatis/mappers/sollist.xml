@@ -8,6 +8,7 @@
 		<![CDATA[
 		select person_no personNo, name, hp
 		from person
+		order by name asc
 		]]>
 	</select>
 	
@@ -16,6 +17,7 @@
 		<![CDATA[
 		select person_no personNo, name, star
 		from person where star = true
+		order by name asc
 		]]>
 	</select>
 	
@@ -26,6 +28,7 @@
 		from person p, team t 
 		where p.team_no = t.team_no
 		and p.team_no = #{groupNo}
+		order by name asc
 		]]>
 	</select>
 	
@@ -35,6 +38,7 @@
 		select person_no personNo, name, hp, team_no teamNo
 		from person
 		where name like #{keyword}
+		order by name asc
 		]]>
 	</select>
 	
