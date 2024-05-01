@@ -54,4 +54,5 @@ public class YsController {
 		return JsonResult.success(teamList);
 	}
 	
+	
 }
