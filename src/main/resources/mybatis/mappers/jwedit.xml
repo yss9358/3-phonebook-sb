@@ -5,29 +5,45 @@
 
 	<!-- 쿼리문작성 -->
 	<!-- <![CDATA[]]> -->
-
+	
 	<!-- 데이터1개 가져오기 -->
-	<select id="selectOne" parameterType="int" resultType="com.javaex.vo.PersonVo">
+<!-- 	<select id="selectOne" parameterType="int" resultType="com.javaex.vo.PersonVo">
       <![CDATA[
          select person_no personNo,
-             name,
-              hp,
-              team_no teamNo,
-              star
-        from person
-       where person_no = #{personNo};
+			    name,
+		        hp,
+		        team_no teamNo,
+		        star
+	 	 from person
+		 where person_no = #{personNo};
       ]]>
+	</select> -->
+	
+	<!-- 데이터 1개 가져오기 -->
+	
+	<select id="selectOne" parameterType="int" resultType="com.javaex.vo.PersonVo">
+	  <![CDATA[
+	    SELECT p.person_no personNo,
+	           p.name,
+	           p.hp,
+	           p.team_no teamNo,
+	           t.team_name teamName,
+	           p.star
+	    FROM person p
+	    LEFT JOIN team t ON p.team_no = t.team_no
+	    WHERE p.person_no = #{personNo};
+	  ]]>
 	</select>
-
+	
 	<!-- 데이타수정 -->
 	<update id="update" parameterType="com.javaex.vo.PersonVo">
-      <![CDATA[   
-         update person
-         set name =#{name},
-             hp = #{hp},
-             team_no = #{teamNo}
-         where person_no = #{personNo}
-      ]]>
+		<![CDATA[   
+			update person
+			set name =#{name},
+			    hp = #{hp},
+			    team_no = #{teamNo}
+			where person_no = #{personNo}
+		]]>
 	</update>
-
+	
 </mapper>

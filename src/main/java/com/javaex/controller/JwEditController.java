@@ -18,7 +18,7 @@ public class JwEditController {
 	private JwEditService jwEditService;
 
 	// 수정폼
-	@GetMapping("api/phones/{personNo}")
+	@GetMapping("phone3/phones/{personNo}")
 	public JsonResult modifyForm(@PathVariable(value="personNo") int personNo) {
 		System.out.println("JwEditController.modifyInfo()");
 		System.out.println(personNo);
@@ -29,7 +29,7 @@ public class JwEditController {
 	}
 
 	// 수정
-	@PutMapping("api/phones/modify/{personNo}")
+	@PutMapping("phone3/phones/modify/{personNo}")
 	public JsonResult modifyInfo(@PathVariable(value="personNo") int personNo, @RequestBody PersonVo personVo) {
 		System.out.println("JwEditController.modifyInfo()");
 		
