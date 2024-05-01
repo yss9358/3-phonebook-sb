@@ -5,6 +5,7 @@ public class TeamVo {
 	private int teamNo;
 	private String teamName;
 	
+	
 	public TeamVo() {
 		
 	}
