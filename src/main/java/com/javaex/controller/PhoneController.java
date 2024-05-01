@@ -29,8 +29,6 @@ public class PhoneController {
 
 	
 	
-	
-	
 	@GetMapping("/phone3/team")
 	public JsonResult teamlist() {
 		List<TeamVo> list = phoneService.exeTeamList();

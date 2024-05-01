@@ -13,7 +13,7 @@
 	
 	<!-- 쿼리문작성 -->
 	<!-- insert 사용 map -->
-	<insert id="insert" parameterType="PersonVo">
+	<insert id="insert" parameterType="com.javaex.vo.PersonVo">
 		<![CDATA[	
 			insert into person
 			values(null, #{name}, #{hp}, #{team_no}, #{star})
