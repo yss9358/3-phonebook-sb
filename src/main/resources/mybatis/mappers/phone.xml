@@ -5,6 +5,7 @@
 	<!-- 쿼리문작성 -->
 	<!-- <![CDATA[]]> -->
 	
+	<!-- 전체 리스트 불러오기 -->
 	<select id="list" resultType="com.javaex.vo.PersonVo">
 		<![CDATA[
 			select	person_no personNo,
@@ -15,14 +16,58 @@
 			from person
 		]]>
 	</select>
+
 	
+	<!-- 그룹 리스트 불러오기 -->
 	<select id="teamList" resultType="com.javaex.vo.TeamVo">
+		<![CDATA[
+			select	t.team_no teamNo,
+					t.team_name teamName,
+			        coalesce(p.count,0) count
+			from team t
+			left outer join (select	t.team_no,
+								count(t.team_no) count 
+						from team t 
+						inner join person p 
+								on t.team_no = p.team_no 
+						group by t.team_no) p
+					on t.team_no = p.team_no
+		]]>
+	</select>
+	
+	<!-- 그룹 추가 -->
+	<insert id="insertTeam" parameterType="String">
+		<![CDATA[
+			insert into team
+			value(null, #{teamName})
+		]]>
+	</insert>
+	
+	<!-- 그룹 중복 확인 -->
+	<select id="teamCheck" parameterType="String" resultType="com.javaex.vo.TeamVo">
 		<![CDATA[
 			select	team_no teamNo,
 					team_name teamName
 			from team
+			where team_name = #{teamName}
 		]]>
 	</select>
 	
+	<!-- 그룹 삭제시 기본값으로 변경 -->
+	<update id="changeTeam" parameterType="int">
+		<![CDATA[
+			update person
+			set team_no = 1
+			where team_no = #{no}
+		]]>
+	</update>
+	
+	<!-- 그룹 삭제 -->
+	<delete id="deleteTeam" parameterType="int">
+		<![CDATA[
+			delete from team
+			where team_no = #{no}		
+		]]>
+	</delete>
 	
 </mapper>
