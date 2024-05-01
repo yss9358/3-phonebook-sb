@@ -21,7 +21,7 @@
 	<insert id="insert" parameterType="com.javaex.vo.PersonVo">
 		<![CDATA[	
 			insert into person
-			values(null, #{name}, #{hp}, #{team_no}, #{star})
+			values(null, #{name}, #{hp}, #{teamNo}, #{star})
 		]]>
 	</insert>
 	

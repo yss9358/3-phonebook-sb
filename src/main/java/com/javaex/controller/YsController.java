@@ -37,9 +37,9 @@ public class YsController {
 
 		hp = "%" + hp + "%";
 		
-		System.out.println(hp);
+		//System.out.println(hp);
 		List<PersonVo> personList = ysService.exeSearch(hp);
-		System.out.println(personList);
+		//System.out.println(personList);
 
 		return JsonResult.success(personList);
 	}
@@ -50,6 +50,7 @@ public class YsController {
 
 		List<TeamVo> teamList = ysService.exeTeam();
 
+		System.out.println(teamList);
 		return JsonResult.success(teamList);
 	}
 	
