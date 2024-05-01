@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sol">
+
+	<!-- 전체리스트 -->
+	<select id="selectAll" resultType="com.javaex.vo.PersonVo">
+		<![CDATA[
+		select person_no personNo, name, hp
+		from person
+		]]>
+	</select>
+	
+	<!-- 즐겨찾기 -->
+	<select id="selectStar" resultType="com.javaex.vo.PersonVo">
+		<![CDATA[
+		select person_no personNo, name, star
+		from person where star = true
+		]]>
+	</select>
+	
+	<!-- 그룹별 리스트 -->
+	<select id="selectGroup" resultType="com.javaex.vo.PersonVo" parameterType="int">
+		<![CDATA[
+		select person_no personNo, name, hp, team_no teamNo, star
+		from person where team_no = #{groupNo}
+		]]>
+	</select>
+	
+	<!-- 검색리스트 -->
+	<select id="selectFind" resultType="com.javaex.vo.PersonVo" parameterType="string">
+		<![CDATA[
+		select person_no personNo, name, hp, team_no teamNo, star
+		from person
+		where name like concat('%',#{keyword},'%')
+		]]>
+	</select>
+	
+	<!-- 즐겨찾기 업데이트 -->
+	<update id="starUpdate" parameterType="int">
+		<![CDATA[
+		update person set star = !star where person_no = #{personNo}
+		]]>
+	</update>
+
+
+</mapper>

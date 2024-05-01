@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jwedit">
+
+	<!-- 쿼리문작성 -->
+	<!-- <![CDATA[]]> -->
+
+	<!-- 데이터1개 가져오기 -->
+	<select id="selectOne" parameterType="int" resultType="com.javaex.vo.PersonVo">
+      <![CDATA[
+         select person_no personNo,
+             name,
+              hp,
+              team_no teamNo,
+              star
+        from person
+       where person_no = #{personNo};
+      ]]>
+	</select>
+
+	<!-- 데이타수정 -->
+	<update id="update" parameterType="com.javaex.vo.PersonVo">
+      <![CDATA[   
+         update person
+         set name =#{name},
+             hp = #{hp},
+             team_no = #{teamNo}
+         where person_no = #{personNo}
+      ]]>
+	</update>
+
+</mapper>

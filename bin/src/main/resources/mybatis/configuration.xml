@@ -6,7 +6,6 @@
 	</typeAliases>
 	
 	<mappers>
-		<mapper resource="mybatis/mappers/delete.xml" />
 		<mapper resource="mybatis/mappers/sollist.xml" />
 		<mapper resource="mybatis/mappers/phone.xml" />
 		<mapper resource="mybatis/mappers/jwedit.xml" />
