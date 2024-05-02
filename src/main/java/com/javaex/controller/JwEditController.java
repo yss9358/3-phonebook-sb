@@ -21,7 +21,7 @@ public class JwEditController {
 	@GetMapping("phone3/phones/{personNo}")
 	public JsonResult modifyForm(@PathVariable(value="personNo") int personNo) {
 		System.out.println("JwEditController.modifyInfo()");
-		System.out.println(personNo);
+		//System.out.println(personNo);
 		
 		PersonVo phoneVo  = jwEditService.exeModifyForm(personNo);
 		
@@ -30,12 +30,13 @@ public class JwEditController {
 
 	// 수정
 	@PutMapping("phone3/phones/modify/{personNo}")
-	public JsonResult modifyInfo(@PathVariable(value="personNo") int personNo, @RequestBody PersonVo personVo) {
-		System.out.println("JwEditController.modifyInfo()");
+	public JsonResult modifyInfo( @RequestBody PersonVo personVo) {
+		System.out.println("JwEditController.modifyInfo2()");
+		
+		System.out.println(personVo);
 		
 		jwEditService.exeModifyPhone(personVo);
-		
-		
+				
 		return JsonResult.success(personVo);
 	}
 

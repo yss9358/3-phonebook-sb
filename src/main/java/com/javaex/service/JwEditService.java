@@ -15,7 +15,7 @@ public class JwEditService {
 	// 데이터 한 개 가져오기
 	public PersonVo exeModifyForm(int personNo) {
 		
-		System.out.println("JwEditService.exeModifyPhone()");
+	//	System.out.println("JwEditService.exeModifyPhone()");
 		
 		PersonVo personVo = jwEditDao.selectOne(personNo);
 		

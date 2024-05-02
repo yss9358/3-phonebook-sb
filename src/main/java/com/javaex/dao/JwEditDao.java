@@ -14,10 +14,10 @@ public class JwEditDao {
 
 	// 한 명 정보 데려오기
 	public PersonVo selectOne(int no) {
-		System.out.println("JwEditDao.selectOne()");
+		//System.out.println("JwEditDao.selectOne()");
 		
 		PersonVo phoneVo = sqlSession.selectOne("jwedit.selectOne", no);
-		System.out.println(phoneVo);
+	//	System.out.println(phoneVo);
 		return phoneVo;
 	}
 
